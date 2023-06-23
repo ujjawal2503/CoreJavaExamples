@@ -44,6 +44,8 @@ public class StreamPracticeCode {
         System.out.println("Multiple into 3");
         List<Integer> integerList = Arrays.asList(1,2,3,4,5,6,7);
         System.out.println(integerList.stream().map(i -> i*3).collect(Collectors.toList()));
+
+
         System.out.println("Program to concatenate two Streams");
         List<Integer> integerList1 = Arrays.asList(1,2,3,4);
         List<Integer> integerList2 = Arrays.asList(5,6,7);
@@ -53,12 +55,15 @@ public class StreamPracticeCode {
         List<Integer> integerLi = Arrays.asList(1,2,3,4,1,2,3);
         System.out.println("After removing duplicates : ");
         integerLi.stream().collect(Collectors.toSet()).forEach(System.out::print);
+
         System.out.println("Sorting the list");
         List<Integer> integerList11 = Arrays.asList(4,5,6,7,1,2,3);
         integerList11.stream().sorted().forEach(System.out::println);
+
         System.out.println("Adding the element");
         List<Integer> integerList3 = Arrays.asList(4,5,6,7,1,2,3);
         System.out.println(integerList3.stream().mapToInt(Integer::intValue).sum());
+
         System.out.println("perfrom cube on list elements and filter numbers greater than 50.");
         List<Integer> integerList4 = Arrays.asList(4,5,6,7,1,2,3);
         integerList4.stream().map(i -> i*i*i).filter(i -> i>50).forEach(System.out::println);
