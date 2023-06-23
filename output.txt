@@ -1,0 +1,65 @@
+First way to find max----3048
+Second way to find max----3048
+Method to find average length====5
+Method to find square of even numbers --->56
+Method to concatenate list of string together---->Ujjawal  Raju  Kaju Himanshu
+Product of element above 5----1061390720
+[Himanshu, Kaju , Raju  , Ujjawal  ]
+[4, 5, 6, 1, 10, 2, 9, 33, 7, 8, 49, 47, 15, 30]
+DAVID
+TOM
+KEN45
+YUVRAJ
+GAYLE
+EAGLE
+EYE
+MADAM
+UJJAWAL
+SHRUTI
+4
+6
+31
+2
+9
+1
+2
+Shortest string--->Tom
+length of the Shortest string--->3
+Average of sum of all elements --->OptionalDouble[13.823529411764707]
+string count above 3 is ---8
+Second smallest----1
+List containing o in it ------[Tom]
+Sum all numbers divisible by 3 --99
+Longest String ---->UJJAWAL
+List of element divided by 3----[6, 9, 6, 33, 15, 30]
+List of element starting with Vowels[eagle, eye]
+thirdHighest number in the list =---->2
+Palindrome Strings ---->[eye, madam]
+Prime numbers ---[5, 1, 2, 1, 2, 7, 47]
+Reversing the order of strings--->[divaD, moT, 54neK, jarvuY, elyaG, elgae, eye, madam, LAWAJJU, ITURHS]
+Average of positive numbers--->7.857142857142857
+string ending with e count-----3
+product of element divisible by 4---32
+Count even length String2
+even number list =====[4, 6, 10, 2, 2, 6, 8, 30]
+Count odd length String----8
+sum of list between 10-50 ---[33, 49, 47, 15, 30]   174
+String with length less than 8 ---[David, Tom, Ken45, Yuvraj, Gayle, eagle, eye, madam, UJJAWAL, SHRUTI]
+Duplicate elements of the list ----[1, 2, 6]
+String count containing OM---1
+largest prime number from list --->1
+List of String with all characters with UpperCase--->[UJJAWAL, SHRUTI]
+List of perfect square---[4, 1, 9, 1, 49]
+String containing number---[]
+Sum of first five elements26
+List of small letter string---[eagle, eye, madam]
+List of element divisible by 3 and 5 --->[15, 30]
+Ques number 42:----> Number divisble by sum of its digit[4, 5, 6, 1, 10, 2, 9, 1, 2, 6, 7, 8, 30]
+Ques number 43:----> All string in small letters[david, tom, ken45, yuvraj, gayle, eagle, eye, madam, ujjawal, shruti]
+Ques num 44---- Count of prime numbers---2
+Ques   45-------[ANkit, Suyash, Shruti, 1234]
+question number 46 -----List is having negative numbers    1
+Question number 47 -----  Count is    1
+Question number 48 -----  Count is  1
+Question number 49 -----  Count of empty string0
+Question num 50 count of number which falls in power of 2---0
