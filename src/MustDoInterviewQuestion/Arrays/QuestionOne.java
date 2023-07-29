@@ -1,7 +1,10 @@
 package MustDoInterviewQuestion.Arrays;
 
 
-Example 1:
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*Example 1:
 
 Input:
 
@@ -21,19 +24,18 @@ public class QuestionOne {
         for (int i = 0; i < n ; i++) {
             a[i]= sc.nextInt();
         }
-        ArrayList <Integer> res = subarraySum(a,n,s);
+        ArrayList<Integer> res = subarraySum(a,n,s);
         for (Integer e:res
              ) {
             System.out.print(e+" ");
         }
     }
-    static ArrayList<Integer> subarraySum(int[] A, int n, int S)
-    {
+    static ArrayList<Integer> subarraySum(int[] A, int n, int S) {
         ArrayList<Integer> result = new ArrayList<>();
         int left = -1, right = -1;
         int currentSum = 0;
 
-        if(S==0) {
+        if (S == 0) {
             result.add(-1); // No subarray found
             return result;
         }
@@ -47,7 +49,7 @@ public class QuestionOne {
             if (currentSum == S) {
 
                 right = i;
-                System.out.println(left+"         " +right);
+                System.out.println(left + "         " + right);
                 result.add(left + 2);  // 1-based indexing for left
                 result.add(right + 1); // 1-based indexing for right
                 return result;
@@ -56,8 +58,8 @@ public class QuestionOne {
 
         result.add(-1); // No subarray found
         return result;
-
-N = 4
+    }}
+/*N = 4
 arr[] = {1, 5, 3, 2}
 Output: 2
 Explanation: There are 2 triplets:
@@ -70,9 +72,3 @@ N = 3
 arr[] = {2, 3, 4}
 Output: 0
 */
-public class QuestionOne {
-    public static void main(String args[]){
-
-
-    }
-}
