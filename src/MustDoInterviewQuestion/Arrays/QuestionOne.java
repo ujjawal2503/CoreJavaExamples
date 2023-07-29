@@ -1,17 +1,10 @@
 package MustDoInterviewQuestion.Arrays;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-/*Given an unsorted array A of size N that contains only positive integers, find a continuous sub-array that adds to a given number S and return the left and right index(1-based indexing) of that subarray.
-
-In case of multiple subarrays, return the subarray indexes which come first on moving from left to right.
-
-Note:- You have to return an ArrayList consisting of two elements left and right. In case no such subarray exists return an array consisting of element -1.
 
 Example 1:
 
 Input:
+
 N = 5, S = 12
 A[] = {1,2,3,7,5}
 Output: 2 4
@@ -63,5 +56,23 @@ public class QuestionOne {
 
         result.add(-1); // No subarray found
         return result;
+
+N = 4
+arr[] = {1, 5, 3, 2}
+Output: 2
+Explanation: There are 2 triplets:
+ 1 + 2 = 3 and 3 +2 = 5
+
+Example 2:
+
+Input:
+N = 3
+arr[] = {2, 3, 4}
+Output: 0
+*/
+public class QuestionOne {
+    public static void main(String args[]){
+
+
     }
 }
