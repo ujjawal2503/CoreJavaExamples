@@ -37,7 +37,7 @@ even numbers*/
 
         /* 5---Given a list of strings, write a method to concatenate all strings into a single string*/
         List<String> stringList1 = Arrays.asList("Ujjawal  ","Raju  ","Kaju ","Himanshu");
-        String bigString = stringList1.stream().collect(Collectors.joining());
+        String bigString = String.join("", stringList1);
         System.out.println("Method to concatenate list of string together---->"+bigString);
 
         /*6---write a method to find the product of all numbers greater than 5*/
@@ -46,7 +46,7 @@ even numbers*/
         System.out.println("Product of element above 5---"+productOfAboveFive);
 
         /*7-------- write a method to sort the strings in ascending order using Java 8 Stream*/
-        List<String> sortedList = stringList1.stream().sorted(String::compareTo).collect(Collectors.toList());
+        List<String> sortedList = stringList1.stream().sorted(String::compareTo).toList();
         System.out.println(sortedList);
 
         /*8--- write a method to remove all duplicates and return a list of unique numbers */
@@ -55,11 +55,11 @@ even numbers*/
 
         /*9---Given a list of strings, write a method to convert all strings to uppercase*/
         List<String> list = Arrays.asList("David", "Tom", "Ken45","Yuvraj", "Gayle","eagle","eye","madam","UJJAWAL","SHRUTI");
-        list.stream().map(players -> players.toUpperCase()) .forEach(System.out::println);
+        list.stream().map(String::toUpperCase) .forEach(System.out::println);
 
         /*10---Given a list of integers, write a method to check if all numbers are positive*/
         List<Integer> numberList3 = Arrays.asList(4,-5,6,31,-10,2,9,1,2);
-        numberList3.stream().filter(e->e>-1).collect(Collectors.toList()).forEach(System.out::println);
+        numberList3.stream().filter(e->e>-1).toList().forEach(System.out::println);
 
         /*11------Given a list of strings, write a method to find the shortest string */
          String s = list.stream().min(Comparator.comparingInt(String::length)).get();
@@ -76,11 +76,11 @@ even numbers*/
         System.out.println("string count above 3 is ---"+countString);
 
         /*14-- Given a list of integers, write a method to find the second smallest number */
-         Integer integer = numberList2.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList()).get(1);
+         Integer integer = numberList2.stream().sorted(Comparator.naturalOrder()).toList().get(1);
         System.out.println("Second smallest----"+integer);
 
         /*15----Given a list of strings, write a method to filter out all strings that contain a specific character*/
-         List<String> returnList  = list.stream().filter(e -> e.contains("o")).collect(Collectors.toList());
+         List<String> returnList  = list.stream().filter(e -> e.contains("o")).toList();
         System.out.println("List containing o in it ------"+returnList);
 
          /*16--.Given a list of integers, write a method to find the sum of all numbers divisible by 3*/
@@ -92,16 +92,16 @@ even numbers*/
         System.out.println("Longest String ---->"+longString);
 
         /*18----Given a list of integers, write a method to check if any number is divisible by a given value*/
-         List<Integer> collect = numberList2.stream().filter(e -> e % 3 == 0).collect(Collectors.toList());
+         List<Integer> collect = numberList2.stream().filter(e -> e % 3 == 0).toList();
         System.out.println("List of element divided by 3----"+collect);
 
         /*19--- .Given a list of strings, write a method to find the count of strings that start with a vowel */
        List<String> vowelList = list.stream().filter(e->(e.startsWith("a")||e.startsWith("e")||e.startsWith("i")
-        ||e.startsWith("o")||e.startsWith("u"))).collect(Collectors.toList());
+        ||e.startsWith("o")||e.startsWith("u"))).toList();
         System.out.println("List of element starting with Vowels"+vowelList);
 
         /*20---Given a list of integers, write a method to find the third largest number*/
-        int thirdHighest = numberList2.stream().sorted().collect(Collectors.toList()).get(2);
+        int thirdHighest = numberList2.stream().sorted().toList().get(2);
         System.out.println("thirdHighest number in the list =---->"+thirdHighest);
 
         /*21 ---Given a list of strings, write a method to filter out all strings that are palindromes using Java 8 Stream*/
@@ -109,29 +109,29 @@ even numbers*/
                 {  StringBuilder input1 = new StringBuilder();
                     input1.append(e);
                     input1.reverse();
-                    if(e.equals(input1.toString()))
-                        return true;
-                    return false;
+                    return e.equals(input1.toString());
                 }
-        ).collect(Collectors.toList());
+        ).toList();
         System.out.println("Palindrome Strings ---->"+collect1);
 
         /*22---Given a list of integers, write a method to find the sum of all prime numbers*/
          List<Integer> collect2 = numberList2.stream().filter(integer1 -> {
         boolean flag = true;
              for (int i = 2; i <integer1 ; i++) {
-                 if(integer1%i==0)
-                     flag=false;
+                 if (integer1 % i == 0) {
+                     flag = false;
+                     break;
+                 }
              }
              return flag;
-        }).collect(Collectors.toList());
+        }).toList();
         System.out.println("Prime numbers ---"+collect2);
 
         /*23---Given a list of strings, write a method to reverse the order of the strings*/
          List<String> collect3 = list.stream().map(e -> {
             StringBuilder input1 = new StringBuilder();
             return input1.append(e).reverse().toString();
-        }).collect(Collectors.toList());
+        }).toList();
         System.out.println("Reversing the order of strings--->"+collect3);
 
         /*24--Given a list of integers, write a method to find the average of positive numbers*/
@@ -150,7 +150,7 @@ even numbers*/
         System.out.println("Count even length String"+countEven);
 
         /*28---Given a list of integers, write a method to check if all numbers are even*/
-         List<Integer> collect4 = numberList2.stream().filter(integer1 -> integer1 % 2 == 0).collect(Collectors.toList());
+         List<Integer> collect4 = numberList2.stream().filter(integer1 -> integer1 % 2 == 0).toList();
         System.out.println("even number list ====="+collect4);
 
         /*29---Given a list of strings, write a method to find the count of strings that have an odd length*/
@@ -158,12 +158,12 @@ even numbers*/
         System.out.println("Count odd length String----"+countOdd);
 
         /*30---Given a list of integers, write a method to find the sum of all numbers between a given range*/
-         List<Integer> collect5 = numberList2.stream().filter(e -> e > 10 && e < 50).collect(Collectors.toList());
+         List<Integer> collect5 = numberList2.stream().filter(e -> e > 10 && e < 50).toList();
         int sum1 = numberList2.stream().filter(e -> e > 10 && e < 50).mapToInt(e -> e).sum();
         System.out.println("sum of list between 10-50 ---"+collect5+"   "+sum1);
 
         /*31----.Given a list of strings, write a method to filter out all strings that have a length less than a given value*/
-         List<String> collect6 = list.stream().filter(e -> e.length() < 8).collect(Collectors.toList());
+         List<String> collect6 = list.stream().filter(e -> e.length() < 8).toList();
         System.out.println("String with length less than 8 ---"+collect6);
 
         /*32--- Given a list of integers, write a method to check if the list contains any duplicate numbers */
@@ -179,31 +179,29 @@ even numbers*/
          Integer largestPrime = numberList2.stream().sorted().filter(integer1 -> {
             boolean flag = true;
             for (int i = 2; i < integer1; i++) {
-                if (integer1 % i == 0)
+                if (integer1 % i == 0) {
                     flag = false;
+                    break;
+                }
             }
             return flag;
-        }).collect(Collectors.toList()).get(0);
-        System.out.println("largest prime number from list --->"+largestPrime);
+        }).toList().get(0);
+        System.out.println(" Question number 34---largest prime number from list --->"+largestPrime);
 
         /*35---Given a list of strings, write a method to check if all strings contain only uppercase letters*/
       List<String> upperCaseList =  list.stream().filter(e->{
-            if(e.matches("[A-Z]+"))
-                return true;
-            return false;
-        }).collect(Collectors.toList());
-        System.out.println("List of String with all characters with UpperCase--->"+upperCaseList);
+          return e.matches("[A-Z]+");
+      }).toList();
+        System.out.println(" Question number 35 --- List of String with all characters with UpperCase--->"+upperCaseList);
 
         /* 36--Given a list of integers, write a method to find the count of numbers that are perfect squares*/
        List<Integer> sqreList =  numberList2.stream().filter(e->{
-            if (Math.sqrt(e) == (int)Math.sqrt(e))
-                return true;
-            return false;
-        }).collect(Collectors.toList());
-        System.out.println("List of perfect square---"+sqreList);
+           return Math.sqrt(e) == (int) Math.sqrt(e);
+       }).toList();
+        System.out.println("Question number 36---List of perfect square---"+sqreList);
 
         /*37--Given a list of strings, write a method to filter out all strings that are numeric*/
-         List<String> collect8 = list.stream().filter(e -> e.matches("[A-Za-z0-9]")).collect(Collectors.toList());
+         List<String> collect8 = list.stream().filter(e -> e.matches("[A-Za-z0-9]")).toList();
         System.out.println("String containing number---"+collect8);
 
         /*38--Given a list of integers, write a method to find the sum of the first N numbers*/
@@ -213,19 +211,15 @@ even numbers*/
         /*39---Given a list of strings, write a method to find the count of strings that contain only lowercase letters*/
 
          List<String> collect9 = list.stream().filter(e -> {
-            if (e.matches("[a-z]+"))
-                return true;
-            return false;
-        }).collect(Collectors.toList());
+             return e.matches("[a-z]+");
+         }).toList();
         System.out.println("List of small letter string---"+collect9);
 
         /*40--- Given a list of integers, write a method to find the count of numbers that are multiples of both 3 and 5*/
 
          List<Integer> collect10 = numberList2.stream().filter(e -> {
-            if (e % 3 == 0 && e % 5 == 0)
-                return true;
-            return false;
-        }).collect(Collectors.toList());
+             return e % 3 == 0 && e % 5 == 0;
+         }).toList();
         System.out.println("List of element divisible by 3 and 5 --->"+collect10);
 
         /*41--- Given a list of strings, write a method to filter out all strings that are not alphanumeric*/
@@ -238,14 +232,12 @@ even numbers*/
                     sum11=sum11+temp%10;
                     temp/=10;
                 }
-                if(e%sum11==0)
-                    return true;
-                return false;
-        }).collect(Collectors.toList());
+           return e % sum11 == 0;
+       }).toList();
         System.out.println("Ques number 42:----> Number divisble by sum of its digit"+listDivide);
 
     /* 43---Given a list of strings, write a method to convert all strings to lowercase using Java 8 Stream API and lambda functions*/
-      List<String> smallLetter =  list.stream().map(e->e.toLowerCase()).collect(Collectors.toList());
+      List<String> smallLetter =  list.stream().map(String::toLowerCase).toList();
         System.out.println("Ques number 43:----> All string in small letters"+smallLetter);
 
 
@@ -253,8 +245,10 @@ even numbers*/
          long count1 = numberList.stream().filter(integer1 -> {
             boolean flag = true;
             for (int i = 2; i < integer1; i++) {
-                if (integer1 % i == 0)
+                if (integer1 % i == 0) {
                     flag = false;
+                    break;
+                }
             }
             return flag;
         }).count();
@@ -264,12 +258,12 @@ even numbers*/
         List<Character> charList = new ArrayList<>();
          List<String> listWithoutRepeatedCharString = stringList.stream()
                 .filter(e -> {
-                    return !(e.chars()
+                    return e.chars()
                             .mapToObj(c -> (char) c)
                             .distinct()
-                            .count() != e.length());
+                            .count() == e.length();
                 })
-                .collect(Collectors.toList());
+                .toList();
 
         System.out.println("Ques   45-------"+listWithoutRepeatedCharString);
 
@@ -286,18 +280,18 @@ even numbers*/
 
         System.out.println("Question number 47 -----  Count is    " +onlyNumericStringCount);
 
-        /* Given a list of integers, write a method to find the count of numbers that have an odd number of digits*/
+        /* 48 Given a list of integers, write a method to find the count of numbers that have an odd number of digits*/
          long count3 = numberList.stream()
                 .filter(e -> String.valueOf(e).length() % 2 != 0)
                 .count();
         System.out.println("Question number 48 -----  Count is  "+count3);
 
-        /*Given a list of strings, write a method to check if all strings are non-empty*/
+        /* 49 Given a list of strings, write a method to check if all strings are non-empty*/
         int sizeList = stringList.size();
-         long count4 = stringList.stream().filter(e -> e.isEmpty()).count();
+         long count4 = stringList.stream().filter(String::isEmpty).count();
         System.out.println("Question number 49 -----  Count of empty string"+ count4);
 
-        /*Given a list of integers, write a method to find the count of numbers that are powers of 2 using Java 8 Stream API and lambda functions*/
+        /* 50 Given a list of integers, write a method to find the count of numbers that are powers of 2 using Java 8 Stream API and lambda functions*/
          long count5 = numberList.stream()
                 .filter(number -> (number > 0 && (number & (number - 1)) == 0))
                 .count();
